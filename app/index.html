@@ -51,7 +51,7 @@
           <td align="left">
               <md-input-container flex="300">
                 <label>회사명</label>
-                <input required name="clientFactory" ng-model="Email">
+                <input required name="clientFactory" ng-model="project.clientFactory">
                 <div ng-messages="projectForm.clientFactory.$error">
                   <div ng-message="required">회사명은 필수로 입력해야 합니다.</div>
                 </div>
@@ -74,7 +74,7 @@
             <td align="left">
               <md-input-container class="md-block" flex="300">
                 <label>직 급</label>
-                <input ng-model="project.description">
+                <input ng-model="project.level">
               </md-input-container>
             </div>
           </td>
@@ -85,7 +85,7 @@
             <div layout="row">
               <md-input-container class="md-block" flex="600">
                 <label>소 속</label>
-                <input ng-model="project.rate">
+                <input ng-model="project.belong">
               </md-input-container>
             </div>
           </td>
@@ -151,15 +151,11 @@
         </tr>
        </table>
 
-            <div>
-              <md-button class="md-raised" type="submit" ng-click="$ctrl.onclick()">문의하기</md-button>
+            <div ng-show="project.tos">
+              <md-button class="md-raised" type="submit" ng-click="app.onclick()">문의하기</md-button>
             </div>
          
       </form>
-
-
-
-  
 
 
 

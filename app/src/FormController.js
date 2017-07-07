@@ -1,28 +1,27 @@
 angular.
     module('starter-app', ['ngMaterial', 'ngMessages'])
 
-.controller('FormController', function($scope) {
-  $scope.project = {};
-});
-
 /**
  * Main App Controller for the Angular Material Starter App
  * @param FormDataService
- * @param $mdSidenav
+ * @param $mdToast
  * @constructor
  */
-function FormController(FormDataService, $mdSidenav) {
+function FormController(FormDataService, $mdToast) {
     var self = this;
 
-    self.onclick = function onclick() {
-        alert("sdf");
-    };
+ 
+
     self.project = {
     description: 'Nuclear Missile Defense System',
     rate: 500,
     special: true
   };
   
+  function onclick(){
+    $mdToast.show($mdToast.simple().textContent('Hello!'));
+};
 }
 
-export default [ 'FormDataService', '$mdSidenav', FormController ];
+
+export default [ 'FormDataService', '$mdToast', FormController ];
